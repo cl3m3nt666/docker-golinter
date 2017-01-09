@@ -4,8 +4,6 @@ MAINTAINER Clement LE CORRE <clement@le-corre.eu>
 ENV SET_EXIT_STATUS 1
 # 1 For false
 ENV WATCHING 0
-# 1 for false
-ENV CHECK_FIXED_PACKAGE 1
 
 RUN apk add --update --no-cache git bash \
     && go get -u github.com/golang/lint/golint \
@@ -14,4 +12,4 @@ RUN apk add --update --no-cache git bash \
 
 COPY entrypoint.sh /bin/entrypoint
 
-ENTRYPOINT entrypoint /go/src $WATCHING $SET_EXIT_STATUS $CHECK_FIXED_PACKAGE
+ENTRYPOINT entrypoint /go/src $WATCHING $SET_EXIT_STATUS
