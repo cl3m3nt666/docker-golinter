@@ -1,31 +1,45 @@
 # docker-golinter
 
+[![Docker Automated buil](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg?style=flat-square)](https://hub.docker.com/r/cl3m3nt/golinter/)
+
+
+
 ## Build
 
 ```
 docker build -t cl3m3nt/golinter .
 ```
 
+## Env variable
+
+| Variable | Value | Description |
+| ------- |:------|:------------|
+| `SET_EXIT_STATUS` |  1 or 0 | SET_EXIT_STATUS disable by default|
+| `WATCHING` |  1 or 0 | WATCHING enabled by default |
+
+
 ## Run
 
 ```
-docker run --rm -v $PWD/src/:/root/files cl3m3nt/golinter /root/files/utils
-/root/files/utils/apperrors.go:11:6: exported type AppError should have comment or be unexported
-/root/files/utils/apperrors.go:12:2: struct field Id should be ID
-/root/files/utils/apperrors.go:15:2: struct field RequestId should be RequestID
-```s
+$ docker run --rm -it -e WATCHING=1 -e SET_EXIT_STATUS=0 -v $PWD/go/src:/go/src cl3m3nt/golinter
+.....
+.....
+.....
+.....
+$ echo $?
+3
+```
 
-## help
+With watching enable :
 
 ```
-Usage of golint:
-	golint [flags] # runs on package in current directory
-	golint [flags] package
-	golint [flags] directory
-	golint [flags] files... # must be a single package
-Flags:
-  -min_confidence float
-    	minimum confidence of a problem to print it (default 0.8)
-  -set_exit_status
-    	set exit status to 1 if any issues are found
+$ docker run --rm -v $PWD/go/src:/go/src cl3m3nt/golinter
+--> Press Ctrl+C to force build, Ctrl+\ to exit.
+--> watching "/go".........................change detected, building...
+
+Linting : /go/src/api
+Linting : /go/src/data_stores
+...
+
+--> resumed watching..........
 ```
