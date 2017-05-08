@@ -1,7 +1,8 @@
 # docker-golinter
 
-[![Docker Automated buil](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg?style=flat-square)](https://hub.docker.com/r/cl3m3nt/golinter/)
-
+[![Docker Automated buil](https://img.shields.io/docker/automated/cl3m3nt/golinter.svg?style=flat-square)](https://hub.docker.com/r/cl3m3nt/golinter/)
+[![Docker Build Statu](https://img.shields.io/docker/build/cl3m3nt/golinter.svg?style=flat-square)](https://hub.docker.com/r/cl3m3nt/golinter/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/cl3m3nt/golinter.svg?style=flat-square)](https://hub.docker.com/r/cl3m3nt/golinter/)
 
 
 ## Build
