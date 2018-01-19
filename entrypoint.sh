@@ -58,6 +58,7 @@ check_file () {
 			case ${el} in
 				*/bin*) ;;
 				*/pkg*) ;;
+        */vendor*) ;;
         */src) check_file "${el}";;
 				*.*) ;;
 				*)

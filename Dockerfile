@@ -1,5 +1,5 @@
 FROM golang:1.7-alpine
-MAINTAINER Clement LE CORRE <clement@le-corre.eu>
+LABEL maintainer="clement@le-corre.eu"
 # 1 for false (default)
 ENV SET_EXIT_STATUS 1
 # 1 For false
